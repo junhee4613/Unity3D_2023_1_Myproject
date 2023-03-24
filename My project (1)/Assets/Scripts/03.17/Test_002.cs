@@ -7,7 +7,7 @@ public class Test_002 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int answer;             //정수 answer에 선언
+        int answer;             //정수 answer 선언
         answer = 1 + 2;         //answer에 1 + 2 연산 값을 입력
         Debug.Log(answer);      //answer를 Debug.Log에 출력 시킨다.
 
