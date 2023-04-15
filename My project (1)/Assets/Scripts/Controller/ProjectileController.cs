@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
-{
+{   //바로 밑에 이거 일단 없어도 됨
     public Vector3 launchDirection;                             //발사 방향 벡터 선언
     public GameObject Projectile;                               //발사체 프리맵 선언
 
