@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         //w,a,s,d 나 화살표 이동 or 자원하는 이동입력 도구 (Horizontal, vertical)
         velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * moveSpeed;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             projectileController.FireProjectile();
         }
