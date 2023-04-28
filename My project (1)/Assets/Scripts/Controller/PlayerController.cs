@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   //모니터 2D -> 인게임 3D 좌표 변환 (마우스가 3D 상에 어디에 있는지)
+    {   //모니터 2D -> 인게임 3D 좌표 변환 (마우스가 3D 상에 어디에 있는지) 추가설명 -> 게임씬에 마우스 위치를 좌표로 반환
         Vector3 mousePos = viewCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, viewCamera.transform.position.y));
         //바라볼 위치를 계산하기 위해서 오브젝트 y축 좌표를 설정 (바닥은 x,z 축)
         Vector3 targetPosition = new Vector3(mousePos.x, transform.position.y, mousePos.z);
-        //받아온 피봇이 마우스를 보게 한다.
+        //받아온 피봇이 마우스를 보게 한다.(Vector3는 없어도 됨)
         PlayerPivot.transform.LookAt(targetPosition, Vector3.up);
         //w,a,s,d 나 화살표 이동 or 자원하는 이동입력 도구 (Horizontal, vertical)
         velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")).normalized * moveSpeed;
@@ -35,9 +35,10 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
+    {   //좌표축의 입력을 받아 현재 위치와 더하고 매 프레임마다 걸리는 시간을 곱해 이동을 자연스럽게 구현
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + velocity * Time.fixedDeltaTime);
         //GetComponent -> 소스가 있는 게임오브젝트에서 <> 안에 있는 컴퍼넌트를 접근
         //접근을 한 후에 계산 된 이동 위치 값을 MovePosition 함수에 적용
+
     }
 }
