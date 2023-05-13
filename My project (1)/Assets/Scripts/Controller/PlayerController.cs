@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   //모니터 2D -> 인게임 3D 좌표 변환 (마우스가 3D 상에 어디에 있는지) 추가설명 -> 게임씬에 마우스 위치를 좌표로 반환
+    {   //모니터 2D -> 인게임 3D 좌표 변환 (마우스가 3D 상에 어디에 있는지) 추가설명 -> 게임씬에 마우스 위치를 좌표로 반환 z에 숫자를 넣어도 됨
         Vector3 mousePos = viewCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, viewCamera.transform.position.y));
         //바라볼 위치를 계산하기 위해서 오브젝트 y축 좌표를 설정 (바닥은 x,z 축)
         Vector3 targetPosition = new Vector3(mousePos.x, transform.position.y, mousePos.z);

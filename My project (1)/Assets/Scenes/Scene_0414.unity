@@ -159,6 +159,7 @@ MonoBehaviour:
   moveSpeed: 3
   PlayerPivot: {fileID: 677352150}
   projectileController: {fileID: 1712160890}
+  Player_hp: 20
 --- !u!54 &208090084
 Rigidbody:
   m_ObjectHideFlags: 0
